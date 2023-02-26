@@ -22,21 +22,34 @@ public class GuessNumber
 
     public string Greet()
     {
-        throw new NotImplementedException();
+        return "---Bem-vindo ao Guessing Game--- /n Para começar, tente adivinhar o número que eu pensei, entre -100 e 100!";
     }
 
     public string ChooseNumber(string userEntry)
     {
-        throw new NotImplementedException();
+        var isConvert = int.TryParse(userEntry, out int convert);
+
+        if(!isConvert) return "Entrada inválida! Não é um número.";
+        if(convert < -100 || convert > 100) return "Entrada inválida! Valor não está no range.";
+
+        userValue = convert;
+
+        return "Número escolhido!";
     }
 
     public string RandomNumber()
     {
-        throw new NotImplementedException();
+        var number = random.GetInt(-100, 100);
+
+        randomValue = number;
+
+        return "A máquina escolheu um número de -100 à 100!";
     }
 
     public string AnalyzePlay()
     {
-        throw new NotImplementedException();
+        if(userValue > randomValue) return "Tente um número MENOR";
+        else if(userValue < randomValue) return "Tente um número MAIOR";
+        else return "ACERTOU!";
     }
 }
