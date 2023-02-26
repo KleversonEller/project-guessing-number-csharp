@@ -13,7 +13,9 @@ public class TestFirstReq
     [InlineData("---Bem-vindo ao Guessing Game--- /n Para começar, tente adivinhar o número que eu pensei, entre -100 e 100!")]
     public void TestGreet(string expected)
     {
-        throw new NotImplementedException();
+        GuessNumber result = new();
+
+        result.Greet().Should().Be(expected);
     }
 
     [Theory(DisplayName = "Deve receber a entrada do usuário e converter para int")]
@@ -25,7 +27,12 @@ public class TestFirstReq
     [InlineData("0", 0)]
     public void TestReceiveUserInputAndConvert(string entry, int expected)
     {
-        throw new NotImplementedException();
+        GuessNumber instance = new();
+
+        var result = instance.ChooseNumber(entry);
+
+        instance.userValue.Should().Be(expected);
+        result.Should().Be("Número escolhido!");
     }
 
     [Theory(DisplayName = "Deve retornar mensagem de errro quando entrada não for inteiro.")]
@@ -36,7 +43,12 @@ public class TestFirstReq
     [InlineData("trybe")]
     public void TestReceiveUserInputAndVerifyType(string entry)
     {
-        throw new NotImplementedException();
+        GuessNumber instance = new();
+
+        var result = instance.ChooseNumber(entry);
+
+        instance.userValue.Should().Be(0);
+        result.Should().Be("Entrada inválida! Não é um número.");
     }
 
     [Theory(DisplayName = "Deve receber a entrada do usuário e garantir que está entre -100 e 100!")]
@@ -47,6 +59,8 @@ public class TestFirstReq
     [InlineData("9999")]
     public void TestReceiveUserInputAndVerifyRange(string entry)
     {
-        throw new NotImplementedException();
+        GuessNumber result = new();
+
+        result.ChooseNumber(entry).Should().Be("Entrada inválida! Valor não está no range.");
     }
 }
