@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "guessing-number", "guessing
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "guessing-number.Test", "guessing-number.Test\guessing-number.Test.csproj", "{70B0A3D1-9C89-4E05-9B97-858F4C7E3045}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "guessing-number.Test.Test", "guessing-number.Test.Test\guessing-number.Test.Test.csproj", "{12F20051-5B8A-40A3-A3B6-3703A27ED945}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
